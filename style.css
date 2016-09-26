@@ -1,0 +1,312 @@
+/*Универсальный селектор*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*Селекторы тегов*/
+h1, p, span {
+	color: #23798F;
+	margin: 0;
+}
+
+/*Селекторы идентификаторов и классов*/
+#content, .article, .list.book {
+	font-weight: bold;
+	font-style: italic;
+}
+
+/*Селекторы атрибутов*/
+[contenteditable], [type=text], [type=password] {
+	padding: 5px 10px;
+	border: 1px solid #5E7DC3;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+/*Псевдоклассы ссылок*/
+a:link, a:visited, a:active {
+	white-space: nowrap;
+	margin: 0 10px;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #ccc;
+}
+
+a:active {
+	color: #B32E2E;
+}
+
+/*Псевдоклассы действий пользователя*/
+input:hover, input:focus, input[type=checkbox]:checked {
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(94,124,195,1);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(94,124,195,1);
+	box-shadow: 0px 0px 5px 0px rgba(94,124,195,1);
+}
+
+
+/*Структурные псевдоклассы*/
+li:nth-child(5), li:first-child, li:last-child {
+	padding-left: 20px;
+}
+
+/*Псевдоэлементы*/
+div.cite::before, div.cite::after {
+	content: '"';
+	color: #A92A2A;
+	font-size: 36px;
+}
+
+/*Группирование селекторов*/
+textarea, select, a {
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+/*Вложенные селекторы*/
+section form button {
+	background: #80B1FA;
+	border: none;
+	padding: 10px 40px;
+}
+
+/*Соседние селекторы*/
+.rect:first-child + .rect {
+	background: red;
+}
+
+.rect {
+	background: blue;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
+
+/*Родственные селекторы*/
+.circle:first-child ~ .circle {
+	background: red;
+}
+
+.circle {
+	background: blue;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	border-radius: 50%;
+}
+
+/*Дочерние селекторы*/
+ul.points li {
+	color: black;
+	display: block;
+	padding: 0;
+	font-size: 40px;
+	line-height: 0.4;
+}
+
+ul.points > li {
+	color: red;
+}
+
+ul.points > li > ul > li {
+	color: blue;
+}
+
+/* ---------------------------- Menu --------------------------- */
+#mainmenu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-radius: 5px;
+
+	background: #7d7e7d;
+	background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%);
+	background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%);
+	background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
+}
+
+#mainmenu ul:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#mainmenu > ul > li {
+	padding: 0;
+	float: left;
+}
+
+#mainmenu ul > li a {
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	margin: 0;
+	padding: 10px 20px;
+	position: relative;
+	transition: background 0.7s;
+}
+
+#mainmenu ul > li a:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+#mainmenu ul > li a .icon-arrow-down {
+	font-size: 10px;
+	color: #fff;
+	position: absolute;
+	top: calc(50% - 5px);
+}
+
+#mainmenu ul > li:hover ul {
+	visibility: visible;
+	opacity: 1;
+	margin-top: 0;
+}
+
+#mainmenu ul li ul {
+	position: absolute;
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	margin-top: -5px;
+	transition: opacity, margin 0.7s, 0.3s ease-out;
+	border-radius: 0;
+}
+
+#mainmenu ul li ul li {
+	padding: 0;
+}
+
+/* ------------------------------------------------------------- */
+body {
+	font-family: Arial;
+	color: #444;
+}
+
+a, input {
+	font-family: Arial;
+	color: #444;
+}
+
+pre {
+	margin: 0;
+}
+
+ul.hierarchy li {
+	padding-left: 0;
+}
+
+.list-resourses li {
+	padding-left: 0;
+}
+
+.list-resourses li a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.list-resourses li a:hover {
+	text-decoration: none;
+}
+
+section.demo {
+	padding: 20px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+
+section.demo:last-child {
+	border-bottom: none;
+}
+
+section.demo:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+section.demo div.column {
+	float: left;
+	width: 50%;
+}
+
+section.demo::before {
+	content: '';
+	display: block;
+	font-weight: bold;
+	font-size: 22px;
+	color: #000;
+	margin-bottom: 10px;
+}
+
+section.demo .description {
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+section.demo.demo0::before {
+	content: 'Пример меню со свойством transition';
+}
+
+section.demo.demo1::before {
+	content: 'Селекторы тегов';
+}
+
+section.demo.demo2::before {
+	content: 'Селекторы идентификаторов и классов';
+}
+
+section.demo.demo3::before {
+	content: 'Селекторы атрибутов';
+}
+
+section.demo.demo4::before {
+	content: 'Псевдоклассы ссылок';
+}
+
+section.demo.demo5::before {
+	content: 'Псевдоклассы действий пользователя';
+}
+
+section.demo.demo6::before {
+	content: 'Структурные псевдоклассы';
+}
+
+section.demo.demo7::before {
+	content: 'Псевдоэлементы';
+}
+
+section.demo.demo8::before {
+	content: 'Соседние селекторы';
+}
+
+section.demo.demo9::before {
+	content: 'Родственные селекторы';
+}
+
+section.demo.demo10::before {
+	content: 'Дочерние селекторы';
+}
+
+section.demo.demo11::before {
+	content: 'Приоритеты селекторов';
+}
+
+section.demo.demo12::before {
+	content: 'Полезные ресурсы';
+}
+
+section.demo.demo13::before {
+	content: 'Группирование селекторов';
+}
+section.demo.demo14::before {
+	content: 'Вложенные селекторы (селекторы потомков)';
+}
